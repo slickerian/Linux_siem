@@ -21,27 +21,6 @@
 
 ---
 
-## 📁 File Structure
-
-```
-InsiderWatch/
-├── core/                    # Core logic (USB monitor, file monitor, command monitor, etc.)
-├── config/                  # YAML configuration files & shutdown flag
-│   └── shutdown.flag
-├── logs/                    # Encrypted log files
-├── utils/                   # Watchdog scripts and helper tools
-│   ├── watchdog_a.py
-│   └── watchdog_b.py
-├── installer/               # Python virtual environment (venv)
-├── main.py                  # Central management agent
-├── admin_shutdown.py        # Secure shutdown script with password prompt
-├── insiderwatch.service     # Systemd unit for main agent
-├── watchdog_a.service       # Systemd unit for Watchdog A
-└── watchdog_b.service       # Systemd unit for Watchdog B
-```
-
----
-
 ## ⚙️ Installation & Setup
 
 1. Clone the project and set up the Python virtual environment.
