@@ -1,0 +1,15 @@
+[Unit]
+Description=InsiderWatch Watchdog B
+After=network.target
+
+[Service]
+ExecStart=/root/InsiderWatch/installer/insiderwatch_venv/bin/python /root/InsiderWatch/utils/watchdog_b.py
+Environment="PATH=/root/InsiderWatch/installer/insiderwatch_venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin"
+Environment="PYTHONPATH=/root/InsiderWatch/installer/insiderwatch_venv/lib/python3.12/site-packages"
+Restart=always
+RestartSec=3
+User=root
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,17 @@
+[Unit]
+Description=InsiderWatch Agent
+After=network.target
+
+[Service]
+WorkingDirectory=/root/InsiderWatch
+ExecStart=/root/InsiderWatch/installer/insiderwatch_venv/bin/python /root/InsiderWatch/main.py
+Environment="PATH=/root/InsiderWatch/installer/insiderwatch_venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin"
+Environment="PYTHONPATH=/root/InsiderWatch/installer/insiderwatch_venv/lib/python3.12/site-packages"
+Restart=always
+RestartSec=3
+User=root
+Environment=PYTHONUNBUFFERED=1
+
+
+[Install]
+WantedBy=multi-user.target
